@@ -21,3 +21,11 @@ jobs:
     - uses: ./
       with: 
         milliseconds: 1000
+  test2: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: test-action-1
+        uses: amondnet/test-action-1@v0.0.1
+        with:
+          milliseconds: 1000
